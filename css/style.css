@@ -1,0 +1,259 @@
+/* === Global Styles === */
+/* Basic font and layout for the entire site */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+    color: #222;
+  }
+  
+  /* === Header and Navigation === */
+  /* Style for the top header bar */
+  header {
+    background-color: #0d47a1; /* Comic-themed deep blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+  }
+  
+  /* Navigation bar layout */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #ffeb3b; /* Bright comic yellow */
+    font-weight: bold;
+  }
+  
+  nav a.active, nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* === Main Content === */
+  main {
+    padding: 20px;
+  }
+  
+  /* Grid layout for comic books */
+  .book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Each comic card */
+  .book {
+    background-color: #ffffff;
+    border: 2px solid #0d47a1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .book:hover {
+    transform: scale(1.02);
+  }
+  
+  .book img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .book .info {
+    margin-top: 10px;
+  }
+  
+  .book .price {
+    color: #d32f2f; /* Comic red for price */
+    font-weight: bold;
+  }
+  
+  /* Buttons used throughout site */
+  .buy-button, button, .checkout-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #d32f2f; /* Red */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover, .checkout-btn:hover, .buy-button:hover {
+    background-color: #b71c1c;
+  }
+  
+  /* === Basket Page Layout === */
+  .basket-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  #basket-items {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  #basket-items li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .basket-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* === Payment Form Styles === */
+  .payment-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .payment-form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  .payment-form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  /* === Success Page Message === */
+  .success {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* === Footer === */
+  footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  /* === Basket Icon === */
+  /* Ensures the basket icon stays small and aligned with text */
+  .basket-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+  /* === Payment Image === */
+  /* Scales the payment icons to fit screen and keeps them central */
+  .payment-icons {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .payment-icons img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* === About Page Box === */
+  /* Style box for the about us content */
+  .about-content {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #0d47a1;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
+    line-height: 1.6;
+  }
+  
+  .about-content h2 {
+    color: #0d47a1;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-content p {
+    margin-bottom: 15px;
+  }
+  
+  /* === Mobile Navigation Toggle Button === */
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #ffeb3b;
+    background-color: #0d47a1;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* === Mobile Responsive Navigation Menu === */
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    #nav-menu,
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #0d47a1;
+      padding: 10px 0;
+      margin: 0;
+    }
+  
+    #nav-menu.show,
+    .nav-links.show {
+      display: flex;
+    }
+  
+    #nav-menu li,
+    .nav-links li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    #nav-menu a,
+    .nav-links a {
+      color: #ffeb3b;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  
+    .basket-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
